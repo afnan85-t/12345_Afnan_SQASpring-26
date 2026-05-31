@@ -1,3 +1,5 @@
+# Base Authentication Algorithm for Job Market Trends Analysis System
+
 authenticate_user <- function(username, password, selected_role) {
   valid_user <- "afnan.analyst@jobmarket.org"
   valid_pass <- "SecurePass2026!"
@@ -8,7 +10,7 @@ authenticate_user <- function(username, password, selected_role) {
     print("Credentials successfully verified.")
   } else {
     is_authenticated <- FALSE
-    print("Access Denied: Invalid username or password.")
+    print("SECURITY ALERT: Access Denied: Invalid username or password.") # Minor modification added
     return("AUTH_FAILED")
   }
   
