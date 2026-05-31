@@ -1,3 +1,5 @@
+# Base Authentication Algorithm for Job Market Trends Analysis System
+
 authenticate_user <- function(username, password, selected_role) {
   valid_user <- "afnan.analyst@jobmarket.org"
   valid_pass <- "SecurePass2026!"
