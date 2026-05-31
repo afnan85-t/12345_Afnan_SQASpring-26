@@ -17,6 +17,7 @@ authenticate_user <- function(username, password, selected_role) {
     access_token <- switch(selected_role,
       "Admin"     = "TOKEN_ADMIN_FULL_ACCESS",
       "Analyst"   = "TOKEN_ANALYST_READ_WRITE",
+      "Manager"   = "TOKEN_MANAGER_REVIEW_ACCESS", # Minor modification added
       "Guest"     = "TOKEN_GUEST_READ_ONLY",
       "UNKNOWN_ROLE_ERROR"
     )
