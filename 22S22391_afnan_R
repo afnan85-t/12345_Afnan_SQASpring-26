@@ -1,0 +1,24 @@
+authenticate_user <- function(username, password, selected_role) {
+  valid_user <- "afnan.analyst@jobmarket.org"
+  valid_pass <- "SecurePass2026!"
+  
+  if (username == valid_user && password == valid_pass) {
+    is_authenticated <- TRUE
+    print("Credentials successfully verified.")
+  } else {
+    is_authenticated <- FALSE
+    print("Access Denied: Invalid username or password.")
+    return("AUTH_FAILED")
+  }
+  
+ 
+  if (is_authenticated) {
+    access_token <- switch(selected_role,
+      "Admin"     = "TOKEN_ADMIN_FULL_ACCESS",
+      "Analyst"   = "TOKEN_ANALYST_READ_WRITE",
+      "Guest"     = "TOKEN_GUEST_READ_ONLY",
+      "UNKNOWN_ROLE_ERROR"
+    )
+    return(access_token)
+  }
+}
